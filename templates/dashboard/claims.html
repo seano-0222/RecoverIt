@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Claims{% endblock %}
+{% block content %}
+<h2 class="mb-4">Claims</h2>
+<table class="table table-striped bg-white shadow-sm">
+    <thead><tr><th>#</th><th>Item</th><th>Claimant</th><th>Status</th><th>Submitted</th></tr></thead>
+    <tbody>
+        {% for claim in claims %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ claim.lost_item|default:claim.found_item }}</td>
+            <td>{{ claim.claimant.username }}</td>
+            <td>
+                <span class="badge {% if claim.status == 'pending' %}bg-warning{% elif claim.status == 'approved' %}bg-success{% else %}bg-danger{% endif %}">
+                    {{ claim.get_status_display }}
+                </span>
+            </td>
+            <td>{{ claim.created_at|date:"M d, Y" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-center text-muted">No claims submitted yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

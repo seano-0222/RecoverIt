@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c104f18a-70b8-4173-bfd0-2ed50eb6bd95" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/RecoverIt.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/backends.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/decorators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lostfound/decorators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lostfound/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/auth_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/claims.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/found_items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/lost_items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recoverit/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recoverit/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recoverit/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recoverit/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +33,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="5" />
+    <option name="cachedIndexableFilesCount" value="12" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,10 +50,69 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0,
-  "fromUser": false
-}]]></component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="2.3877908647029353" />
+      <entry key="MS500" value="5.614617326466458" />
+      <entry key="S2" value="8.202593959315843" />
+      <entry key="S5" value="9.164180248766408" />
+      <entry key="S10" value="9.56007326099699" />
+      <entry key="S30" value="11.130628752834069" />
+      <entry key="S60" value="17.495515904263225" />
+      <entry key="M2" value="36.002949534772036" />
+      <entry key="M5" value="94.67379770349964" />
+      <entry key="M10" value="172.6644049397011" />
+      <entry key="M15" value="234.3209310421619" />
+      <entry key="M30" value="358.46536818728947" />
+      <entry key="H1" value="473.521108018886" />
+      <entry key="H2" value="555.1305562201438" />
+      <entry key="H4" value="604.2238687313258" />
+      <entry key="D1" value="650.1974220568977" />
+      <entry key="W1" value="658.586629607744" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="2.1571942838785418E-212" />
+      <entry key="S10" value="1.4687390114919918E-106" />
+      <entry key="S30" value="5.276122578323752E-36" />
+      <entry key="S60" value="2.2969811880648025E-18" />
+      <entry key="M2" value="1.5155794891937564E-9" />
+      <entry key="M5" value="2.966412125439896E-4" />
+      <entry key="M10" value="0.017223275314062224" />
+      <entry key="M15" value="0.06669252535387225" />
+      <entry key="M30" value="0.25824896002476183" />
+      <entry key="H1" value="0.5081820146608504" />
+      <entry key="H2" value="0.7128688621765189" />
+      <entry key="H4" value="0.8443156176315403" />
+      <entry key="D1" value="0.9721892258921471" />
+      <entry key="W1" value="0.995978847056803" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.3548974818367805" />
+      <entry key="MS500" value="5.598489474413601" />
+      <entry key="S2" value="8.19616810971576" />
+      <entry key="S5" value="9.161153884911204" />
+      <entry key="S10" value="9.558458484538555" />
+      <entry key="S30" value="11.129986603025788" />
+      <entry key="S60" value="17.49499340536356" />
+      <entry key="M2" value="36.0023703730585" />
+      <entry key="M5" value="94.67328980530037" />
+      <entry key="M10" value="172.68038333104406" />
+      <entry key="M15" value="234.3859276520991" />
+      <entry key="M30" value="358.7214348454835" />
+      <entry key="H1" value="474.02741180276365" />
+      <entry key="H2" value="555.842176586625" />
+      <entry key="H4" value="605.0674625946158" />
+      <entry key="D1" value="651.1694753530245" />
+      <entry key="W1" value="659.5825886229713" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3Ft2DJFFmX3b19J5DD3AVGxzPu8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +120,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.RecoverIt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
@@ -42,7 +130,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -54,6 +148,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="recoverit.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -89,6 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782879925365</updated>
       <workItem from="1782879926389" duration="203000" />
+      <workItem from="1782880971062" duration="3862000" />
     </task>
     <servers />
   </component>
