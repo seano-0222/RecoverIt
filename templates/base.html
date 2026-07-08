@@ -29,13 +29,7 @@
                 <a href="{% url 'dashboard:users' %}" class="nav-link {% if request.resolver_match.url_name == 'users' %}active{% endif %}">Users</a>
             </li>
             <li>
-                <a href="{% url 'dashboard:lost_items' %}" class="nav-link {% if request.resolver_match.url_name == 'lost_items' %}active{% endif %}">Lost Items</a>
-            </li>
-            <li>
-                <a href="{% url 'dashboard:found_items' %}" class="nav-link {% if request.resolver_match.url_name == 'found_items' %}active{% endif %}">Found Items</a>
-            </li>
-            <li>
-                <a href="{% url 'dashboard:claims' %}" class="nav-link {% if request.resolver_match.url_name == 'claims' %}active{% endif %}">Claims</a>
+                <a href="{% url 'dashboard:items' %}" class="nav-link {% if request.resolver_match.url_name == 'items' %}active{% endif %}">Items</a>
             </li>
         </ul>
         <hr class="text-secondary">

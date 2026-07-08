@@ -3,7 +3,7 @@
 {% block content %}
 <h2 class="mb-4">Dashboard</h2>
 <div class="row g-4">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-stat shadow-sm text-white bg-primary">
             <div class="card-body">
                 <h6 class="card-title">Total Users</h6>
@@ -11,27 +11,19 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-stat shadow-sm text-white bg-warning">
             <div class="card-body">
-                <h6 class="card-title">Total Lost Items</h6>
+                <h6 class="card-title">Lost Items</h6>
                 <p class="display-6 mb-0">{{ total_lost_items }}</p>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-stat shadow-sm text-white bg-success">
             <div class="card-body">
-                <h6 class="card-title">Total Found Items</h6>
+                <h6 class="card-title">Found Items</h6>
                 <p class="display-6 mb-0">{{ total_found_items }}</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card card-stat shadow-sm text-white bg-danger">
-            <div class="card-body">
-                <h6 class="card-title">Pending Claims</h6>
-                <p class="display-6 mb-0">{{ pending_claims }}</p>
             </div>
         </div>
     </div>

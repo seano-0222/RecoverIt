@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Items{% endblock %}
+{% block content %}
+<h2 class="mb-4">Items</h2>
+<table class="table table-striped bg-white shadow-sm">
+    <thead>
+        <tr><th>#</th><th>Item Name</th><th>Type</th><th>Category</th><th>Location</th><th>Status</th><th>Reported By</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ item.item_name }}</td>
+            <td>
+                <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %}">
+                    {{ item.get_type_display }}
+                </span>
+            </td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.location }}</td>
+            <td>{{ item.get_status_display }}</td>
+            <td>{{ item.user.username }}</td>
+            <td>{{ item.date_reported|date:"M d, Y" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8" class="text-center text-muted">No items reported yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
