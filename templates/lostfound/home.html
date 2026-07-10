@@ -30,10 +30,14 @@
                 <img src="{{ item.image.url }}" class="card-img-top" style="height: 180px; object-fit: cover;" alt="{{ item.item_name }}">
             {% endif %}
             <div class="card-body">
-                <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %} mb-2">
-                    {{ item.get_type_display }}
-                </span>
-                <h5 class="card-title">{{ item.item_name }}</h5>
+                {% if item.status == 'resolved' %}
+                   <span class="badge bg-success mb-2">Found</span>
+                {% else %}
+                   <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %} mb-2">
+                            {{ item.get_type_display }}
+                   </span>
+                {% endif %}
+                <h5 class="card-title"><a href="{% url 'lostfound:item_detail' item.pk %}">{{ item.item_name }}</a></h5>
                 <p class="card-text text-muted small">{{ item.description|truncatewords:15 }}</p>
                 <p class="card-text small"><strong>Location:</strong> {{ item.location }}</p>
                 <p class="card-text small"><strong>Reported by:</strong> {{ item.user.username }}</p>
