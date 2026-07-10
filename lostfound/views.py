@@ -129,3 +129,21 @@ def item_delete(request, pk):
         messages.success(request, "Item report deleted.")
         return redirect('lostfound:home')
     return redirect('lostfound:item_detail', pk=item.pk)
+
+@login_required
+def item_edit(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    if item.user != request.user:
+        messages.error(request, "Only the reporter can edit this item.")
+        return redirect('lostfound:item_detail', pk=item.pk)
+
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Item updated successfully.")
+            return redirect('lostfound:item_detail', pk=item.pk)
+    else:
+        form = ItemForm(instance=item)
+
+    return render(request, 'lostfound/item_edit.html', {'form': form, 'item': item})
