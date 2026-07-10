@@ -1,0 +1,56 @@
+{% extends 'public_base.html' %}
+{% block title %}{{ item.item_name }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        {% if item.image %}
+            <img src="{{ item.image.url }}" class="img-fluid rounded shadow-sm mb-5 border border-4" alt="{{ item.item_name }}">
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        {% if item.status == 'resolved' %}
+            <span class="badge bg-success mb-2">Found</span>
+        {% else %}
+            <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %} mb-2">
+                {{ item.get_type_display }}
+            </span>
+        {% endif %}
+        <h2>{{ item.item_name }}</h2>
+        <p class="text-muted">{{ item.category }}</p>
+        <p>{{ item.description }}</p>
+        <p><strong>Location:</strong> {{ item.location }}</p>
+        <p><strong>Date:</strong> {{ item.date_reported|date:"M d, Y" }}</p>
+        <p><strong>Reported by:</strong> {{ item.user.username }}</p>
+        <p><strong>Status:</strong> {{ item.get_status_display }}
+            {% if item.found_by %} — found by {{ item.found_by.username }}{% endif %}
+        </p>
+
+        {% if not is_owner and item.status != 'resolved' %}
+            <a href="{% url 'lostfound:item_chat' item.pk %}" class="btn btn-primary">Contact Reporter</a>
+        {% endif %}
+
+        {% if is_owner %}
+            <hr>
+            <h5>Conversations</h5>
+            {% for person in threads %}
+                <div class="mb-2">
+                    <a href="{% url 'lostfound:item_chat_with' item.pk person.pk %}" class="btn btn-outline-secondary btn-sm">
+                        Chat with {{ person.username }}
+                    </a>
+                    <form method="post" action="{% url 'lostfound:item_mark_found' item.pk person.pk %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-success btn-sm">Mark Found by {{ person.username }}</button>
+                    </form>
+                </div>
+            {% empty %}
+                <p class="text-muted">No one has messaged about this item yet.</p>
+            {% endfor %}
+
+            <form method="post" action="{% url 'lostfound:item_delete' item.pk %}" onsubmit="return confirm('Delete this item report?');" class="mt-3">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Delete Item</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

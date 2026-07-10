@@ -1,0 +1,29 @@
+{% extends 'public_base.html' %}
+{% block title %}Chat about {{ item.item_name }}{% endblock %}
+{% block content %}
+<h4>Conversation with {{ partner.username }} about "{{ item.item_name }}"</h4>
+
+<div class="border rounded p-3 mb-3" style="max-height: 400px; overflow-y: auto; background: #fff;">
+    {% for msg in thread %}
+        <div class="mb-2 {% if msg.sender == request.user %}text-end{% endif %}">
+            <span class="badge {% if msg.sender == request.user %}bg-primary{% else %}bg-secondary{% endif %}">
+                {{ msg.sender.username }}
+            </span>
+            <div>{{ msg.text }}</div>
+            <small class="text-muted">{{ msg.created_at|date:"M d, Y H:i" }}</small>
+        </div>
+    {% empty %}
+        <p class="text-muted">No messages yet. Say hello!</p>
+    {% endfor %}
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group">
+        {{ form.text }}
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+
+<a href="{% url 'lostfound:item_detail' item.pk %}" class="btn btn-link mt-3">&larr; Back to item</a>
+{% endblock %}
