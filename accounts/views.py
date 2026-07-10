@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -8,9 +5,15 @@ from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, LoginForm
 
 
+def _post_login_redirect(user):
+    if user.is_staff:
+        return redirect('dashboard:index')
+    return redirect('lostfound:home')
+
+
 def register_view(request):
     if request.user.is_authenticated:
-        return redirect('dashboard:index')
+        return _post_login_redirect(request.user)
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -26,7 +29,7 @@ def register_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('dashboard:index')
+        return _post_login_redirect(request.user)
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -42,7 +45,7 @@ def login_view(request):
                     request.session.set_expiry(1209600)  # 2 weeks
                 else:
                     request.session.set_expiry(0)  # expires when browser closes
-                return redirect('dashboard:index')
+                return _post_login_redirect(user)
             else:
                 messages.error(request, 'Invalid username/email or password.')
     else:

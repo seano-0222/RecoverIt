@@ -1,0 +1,21 @@
+{% extends 'public_base.html' %}
+{% block title %}My Reports{% endblock %}
+{% block content %}
+<h2 class="mb-4">My Reports</h2>
+<table class="table table-striped bg-white shadow-sm">
+    <thead><tr><th>Item</th><th>Type</th><th>Status</th><th>Location</th><th>Date</th></tr></thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.item_name }}</td>
+            <td>{{ item.get_type_display }}</td>
+            <td>{{ item.get_status_display }}</td>
+            <td>{{ item.location }}</td>
+            <td>{{ item.date_reported|date:"M d, Y" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-center text-muted">You haven't reported anything yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -31,6 +31,9 @@
             <li>
                 <a href="{% url 'dashboard:items' %}" class="nav-link {% if request.resolver_match.url_name == 'items' %}active{% endif %}">Items</a>
             </li>
+            <li>
+                <a href="{% url 'lostfound:home' %}" class="nav-link {% if request.resolver_match.url_name == 'items' %}active{% endif %}">Home</a>
+            </li>
         </ul>
         <hr class="text-secondary">
         <form method="post" action="{% url 'accounts:logout' %}">

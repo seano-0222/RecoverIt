@@ -1,0 +1,47 @@
+{% extends 'public_base.html' %}
+{% block title %}Browse Items - RecoverIt{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Browse Lost & Found Items</h2>
+    <a href="{% url 'lostfound:report_item' %}" class="btn btn-primary">+ Report an Item</a>
+</div>
+
+<form method="get" class="row g-2 mb-4">
+    <div class="col-auto">
+        <input type="text" name="q" class="form-control" placeholder="Search item name..." value="{{ request.GET.q|default:'' }}">
+    </div>
+    <div class="col-auto">
+        <select name="type" class="form-select">
+            <option value="">All Types</option>
+            <option value="lost" {% if request.GET.type == 'lost' %}selected{% endif %}>Lost</option>
+            <option value="found" {% if request.GET.type == 'found' %}selected{% endif %}>Found</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-secondary">Filter</button>
+    </div>
+</form>
+
+<div class="row g-4">
+    {% for item in items %}
+    <div class="col-md-4">
+        <div class="card item-card shadow-sm h-100">
+            {% if item.image %}
+                <img src="{{ item.image.url }}" class="card-img-top" style="height: 180px; object-fit: cover;" alt="{{ item.item_name }}">
+            {% endif %}
+            <div class="card-body">
+                <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %} mb-2">
+                    {{ item.get_type_display }}
+                </span>
+                <h5 class="card-title">{{ item.item_name }}</h5>
+                <p class="card-text text-muted small">{{ item.description|truncatewords:15 }}</p>
+                <p class="card-text small"><strong>Location:</strong> {{ item.location }}</p>
+                <p class="card-text small"><strong>Reported by:</strong> {{ item.user.username }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">No items reported yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'public_base.html' %}
+{% block title %}Report an Item{% endblock %}
+{% block content %}
+<h2 class="mb-4">Report a Lost or Found Item</h2>
+
+<form method="post" enctype="multipart/form-data" class="col-md-8">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Item Name</label>
+        {{ form.item_name }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        {{ form.type }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        {{ form.category }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        {{ form.description }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        {{ form.location }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        {{ form.date_reported }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image (optional)</label>
+        {{ form.image }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Report</button>
+</form>
+{% endblock %}
