@@ -31,6 +31,7 @@
 
         {% if is_owner %}
             <hr>
+            <a href="{% url 'lostfound:item_edit' item.pk %}" class="btn btn-outline-primary btn-sm mb-3">Edit Details</a>
             <h5>Conversations</h5>
             {% for person in threads %}
                 <div class="mb-2">
