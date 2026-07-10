@@ -1,0 +1,47 @@
+{% extends 'public_base.html' %}
+{% block title %}Edit {{ item.item_name }}{% endblock %}
+{% block content %}
+<h2 class="mb-4">Edit Item</h2>
+
+<form method="post" enctype="multipart/form-data" class="col-md-8">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Item Name</label>
+        {{ form.item_name }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        {{ form.type }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        {{ form.category }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        {{ form.description }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        {{ form.location }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        {{ form.date_reported }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        {% if item.image %}
+            <div class="mb-2">
+                <img src="{{ item.image.url }}" class="img-thumbnail" style="max-height: 150px;" alt="current image">
+            </div>
+        {% endif %}
+        {{ form.image }}
+        <small class="text-muted">Leave blank to keep the current image.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{% url 'lostfound:item_detail' item.pk %}" class="btn btn-link">Cancel</a>
+</form>
+{% endblock %}
