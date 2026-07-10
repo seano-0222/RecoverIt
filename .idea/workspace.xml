@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c104f18a-70b8-4173-bfd0-2ed50eb6bd95" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lostfound/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lostfound/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lostfound/my_items.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lostfound/report_item.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/lostfound/item_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lostfound/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostfound/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lostfound/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostfound/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lostfound/item_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lostfound/item_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="55" />
+    <option name="cachedIndexableFilesCount" value="59" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,61 +36,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1612423581348498E-298" />
-      <entry key="MS500" value="1.3223089381803135E-59" />
-      <entry key="S2" value="1.6415635028722774E-14" />
-      <entry key="S5" value="2.1271885888938138E-5" />
-      <entry key="S10" value="0.02380598534792076" />
-      <entry key="S30" value="2.603902317770362" />
-      <entry key="S60" value="9.173187089993736" />
-      <entry key="M2" value="22.283048718160206" />
-      <entry key="M5" value="56.034350864843844" />
-      <entry key="M10" value="86.00091895782836" />
-      <entry key="M15" value="104.89619902698024" />
-      <entry key="M30" value="173.3330147913138" />
-      <entry key="H1" value="341.05408539797645" />
-      <entry key="H2" value="570.8977321735729" />
-      <entry key="H4" value="771.2512743198091" />
-      <entry key="D1" value="1010.7111824439227" />
-      <entry key="W1" value="1060.4303044418862" />
+      <entry key="MS100" value="1.0000000000628193" />
+      <entry key="MS500" value="1.009112180958318" />
+      <entry key="S2" value="1.327309972070383" />
+      <entry key="S5" value="1.897704582043908" />
+      <entry key="S10" value="2.511671296068898" />
+      <entry key="S30" value="4.129971380253586" />
+      <entry key="S60" value="10.266664922250364" />
+      <entry key="M2" value="28.243799567236845" />
+      <entry key="M5" value="77.60497814657296" />
+      <entry key="M10" value="136.2468663996911" />
+      <entry key="M15" value="177.86036332769987" />
+      <entry key="M30" value="273.2673804445357" />
+      <entry key="H1" value="451.14121473941543" />
+      <entry key="H2" value="699.8950015524553" />
+      <entry key="H4" value="927.3986282537242" />
+      <entry key="D1" value="1210.4808270528886" />
+      <entry key="W1" value="1270.5954026625898" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0000000000184874" />
-      <entry key="M10" value="1.000004299707648" />
-      <entry key="M15" value="1.0002644189755352" />
-      <entry key="M30" value="1.0162609647787335" />
-      <entry key="H1" value="1.1275184879879516" />
-      <entry key="H2" value="1.35709730885005" />
-      <entry key="H4" value="1.5975761950162148" />
-      <entry key="D1" value="1.9177665287290582" />
-      <entry key="W1" value="1.9878159417274055" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.157822071337427E-211" />
+      <entry key="S5" value="7.039573700639632E-85" />
+      <entry key="S10" value="8.390216743707853E-43" />
+      <entry key="S30" value="9.4317234892688E-15" />
+      <entry key="S60" value="9.711706075282884E-8" />
+      <entry key="M2" value="3.1163610309594856E-4" />
+      <entry key="M5" value="0.039578479523614644" />
+      <entry key="M10" value="0.19894426323821598" />
+      <entry key="M15" value="0.34087973940942917" />
+      <entry key="M30" value="0.5932645916372636" />
+      <entry key="H1" value="0.8614801280375285" />
+      <entry key="H2" value="1.1862378722705234" />
+      <entry key="H4" value="1.493626391256672" />
+      <entry key="D1" value="1.8963818969359376" />
+      <entry key="W1" value="1.98463416971747" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3174172808891923E-4" />
-      <entry key="MS500" value="0.1674729503034801" />
-      <entry key="S2" value="0.6397144603613575" />
-      <entry key="S5" value="0.8363835971304817" />
-      <entry key="S10" value="0.9383282462513945" />
-      <entry key="S30" value="3.574332098311732" />
-      <entry key="S60" value="10.15800570298422" />
-      <entry key="M2" value="23.27514353373503" />
-      <entry key="M5" value="57.03088695546067" />
-      <entry key="M10" value="86.99905850776281" />
-      <entry key="M15" value="105.89515692687563" />
-      <entry key="M30" value="174.34839810574968" />
-      <entry key="H1" value="342.18068278883607" />
-      <entry key="H2" value="572.2539374121036" />
-      <entry key="H4" value="772.8481909130817" />
-      <entry key="D1" value="1012.628793112587" />
-      <entry key="W1" value="1062.4180967035043" />
+      <entry key="MS100" value="0.8467453124149867" />
+      <entry key="MS500" value="0.9760659225160209" />
+      <entry key="S2" value="1.3159822069488372" />
+      <entry key="S5" value="1.8893710632065097" />
+      <entry key="S10" value="2.504134276175903" />
+      <entry key="S30" value="4.1255003066590055" />
+      <entry key="S60" value="10.263820312159472" />
+      <entry key="M2" value="28.242209841691263" />
+      <entry key="M5" value="77.64317851044336" />
+      <entry key="M10" value="136.444533498796" />
+      <entry key="M15" value="178.2000733746423" />
+      <entry key="M30" value="273.8596818804299" />
+      <entry key="H1" value="452.00173573383415" />
+      <entry key="H2" value="701.0803232084176" />
+      <entry key="H4" value="928.8915673549989" />
+      <entry key="D1" value="1212.3770427128338" />
+      <entry key="W1" value="1272.5800114506699" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -175,10 +170,22 @@
       <workItem from="1782879926389" duration="203000" />
       <workItem from="1782880971062" duration="5944000" />
       <workItem from="1783484775745" duration="6184000" />
+      <workItem from="1783657494726" duration="1922000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/templates/lostfound/home.html</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
