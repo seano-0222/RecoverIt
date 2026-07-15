@@ -12,9 +12,13 @@
             <td>{{ forloop.counter }}</td>
             <td>{{ item.item_name }}</td>
             <td>
-                <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %}">
-                    {{ item.get_type_display }}
-                </span>
+                {% if item.status == 'resolved' %}
+                    <span class="badge bg-success">Found</span>
+                {% else %}
+                    <span class="badge {% if item.type == 'lost' %}bg-warning{% else %}bg-success{% endif %}">
+                        {{ item.get_type_display }}
+                    </span>
+                {% endif %}
             </td>
             <td>{{ item.category }}</td>
             <td>{{ item.location }}</td>

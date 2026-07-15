@@ -6,6 +6,10 @@
 <form method="post" enctype="multipart/form-data" class="col-md-8">
     {% csrf_token %}
 
+    {% if form.non_field_errors %}
+          <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+    {% endif %}
+
     <div class="mb-3">
         <label class="form-label">Item Name</label>
         {{ form.item_name }}

@@ -28,7 +28,7 @@ def home(request):
 @login_required
 def report_item(request):
     if request.method == 'POST':
-        form = ItemForm(request.POST, request.FILES)
+        form = ItemForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
             item = form.save(commit=False)
             item.user = request.user
@@ -36,7 +36,7 @@ def report_item(request):
             messages.success(request, 'Item reported successfully.')
             return redirect('lostfound:home')
     else:
-        form = ItemForm()
+        form = ItemForm(user=request.user)
 
     return render(request, 'lostfound/report_item.html', {'form': form})
 
@@ -138,12 +138,12 @@ def item_edit(request, pk):
         return redirect('lostfound:item_detail', pk=item.pk)
 
     if request.method == 'POST':
-        form = ItemForm(request.POST, request.FILES, instance=item)
+        form = ItemForm(request.POST, request.FILES, instance=item, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, "Item updated successfully.")
             return redirect('lostfound:item_detail', pk=item.pk)
     else:
-        form = ItemForm(instance=item)
+        form = ItemForm(instance=item, user=request.user)
 
     return render(request, 'lostfound/item_edit.html', {'form': form, 'item': item})
