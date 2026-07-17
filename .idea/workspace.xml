@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c104f18a-70b8-4173-bfd0-2ed50eb6bd95" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lostfound/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostfound/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lostfound/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lostfound/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lostfound/item_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lostfound/item_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lostfound/report_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lostfound/report_item.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="67" />
+    <option name="cachedIndexableFilesCount" value="71" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,7 +167,8 @@
       <workItem from="1782880971062" duration="5944000" />
       <workItem from="1783484775745" duration="6184000" />
       <workItem from="1783657494726" duration="3748000" />
-      <workItem from="1784089227533" duration="1086000" />
+      <workItem from="1784089227533" duration="3649000" />
+      <workItem from="1784262556659" duration="335000" />
     </task>
     <servers />
   </component>
