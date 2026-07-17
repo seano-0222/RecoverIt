@@ -1,12 +1,15 @@
 """
 Django settings for recoverit project.
 """
-
+import os
 from pathlib import Path
+import dj_database_url
+from dotenv import load_dotenv
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv()
 
 # -----------------------------------------------------------------------
 # Environment variables (django-environ reads from a .env file)
