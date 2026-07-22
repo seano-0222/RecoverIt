@@ -25,13 +25,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', RedirectView.as_view(pattern_name='accounts:login', permanent=False)),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('dashboard/', include('dashboard.urls')),
-    path('lostfound/', include('lostfound.urls')),
+    path('admin', admin.site.urls),
+    path('accounts', include('accounts.urls')),
+    path('dashboard', include('dashboard.urls')),
+    path('lostfound', include('lostfound.urls')),
 ]
 
+# Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    if settings.STATICFILES_DIRS:
-        urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

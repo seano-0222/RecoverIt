@@ -34,8 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'cloudinary_storage',
-    'cloudinary',
+
 
     # Local apps
     'accounts',
@@ -72,7 +71,7 @@ ROOT_URLCONF = 'recoverit.urls'
 STORAGES ={
     'default': {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
-        'BACKEND': 'cloudinary_storage.storage.MediaCloudinaryStorage',
+
     },
     "staticfiles":{
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
