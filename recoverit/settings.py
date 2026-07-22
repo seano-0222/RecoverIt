@@ -67,6 +67,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 ROOT_URLCONF = 'recoverit.urls'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = Path(env('MEDIA_ROOT', default=str(BASE_DIR / 'media')))
 
 STORAGES ={
     'default': {
