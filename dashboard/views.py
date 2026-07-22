@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.models import User
 from lostfound.models import Item
 from .decorators import admin_required
@@ -25,3 +26,17 @@ def users_view(request):
 def items_view(request):
     items = Item.objects.all().order_by('-created_at')
     return render(request, 'dashboard/items.html', {'items': items})
+
+@admin_required
+def item_admin_delete(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+
+    if item.status != 'resolved':
+        messages.error(request, 'Only resolved (found) items can be deleted.')
+        return redirect('dashboard:items')
+
+    if request.method == 'POST':
+        item_name = item.item_name
+        item.delete()
+        messages.success(request, f'"{item_name}" was deleted by admin.')
+    return redirect('dashboard:items')
