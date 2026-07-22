@@ -34,11 +34,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'cloudinary_storage',
+    'cloudinary',
+
     # Local apps
     'accounts',
     'dashboard',
     'lostfound',
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME', default=''),
+    'API_KEY': env('CLOUDINARY_API_KEY', default=''),
+    'API_SECRET': env('CLOUDINARY_API_SECRET', default=''),
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +71,8 @@ ROOT_URLCONF = 'recoverit.urls'
 
 STORAGES ={
     'default': {
-        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+
+        'BACKEND': 'cloudinary_storage.storage.MediaCloudinaryStorage',
     },
     "staticfiles":{
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
